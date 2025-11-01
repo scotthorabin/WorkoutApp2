@@ -5,7 +5,7 @@
     android:startOffset="200"
     >
     <translate
-        android:fromYDelta="-10"
+        android:fromYDelta="-100"
         android:toYDelta="0">
 
     </translate>

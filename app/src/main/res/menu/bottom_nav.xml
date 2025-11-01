@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:enabled="true"
+        android:id="@+id/test"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <item android:title="Workouts"
+        android:enabled="true"
+        android:id="@+id/workouts"
+        android:icon="@drawable/outline_exercise_24"/>
+
+    <item android:title="History"
+        android:enabled="true"
+        android:id="@+id/history"
+        android:icon="@drawable/outline_alarm_24"/>
+
+    <item android:title="Settings"
+        android:enabled="true"
+        android:id="@+id/settings"
+        android:icon="@drawable/outline_admin_panel_settings_24"/>
+
+</menu>

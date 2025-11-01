@@ -29,7 +29,6 @@ RecyclerView.Adapter<ItemsListAdapter.Viewholder>(){
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
         holder.binding.titleTxt.text = items[position].title
-        holder.binding.subtitleTxt.text = items[position].description
 
         Glide.with(context)
             .load(items[position].url)

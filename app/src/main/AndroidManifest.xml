@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkoutApp">
         <activity
+            android:name=".TimerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SpecificItemActivity"
+            android:exported="false" />
+        <activity
             android:name=".ItemsListActivity"
             android:exported="false" />
         <activity

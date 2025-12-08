@@ -2,11 +2,13 @@ package Adapter
 
 import Domain.ItemsModel
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.workoutapp.SpecificItemActivity
 import com.example.workoutapp.databinding.ViewholderPopularBinding
 class PopularAdapter (val items: List<ItemsModel>):
 RecyclerView.Adapter<PopularAdapter.Viewholder>(){
@@ -35,7 +37,9 @@ RecyclerView.Adapter<PopularAdapter.Viewholder>(){
             .into(holder.binding.picture)
 
         holder.itemView.setOnClickListener {
-
+            val intent = Intent(context, SpecificItemActivity::class.java)
+            intent.putExtra("object", items[position])
+            context.startActivity(intent)
         }
     }
 

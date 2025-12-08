@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         // When get started button is clicked, navigate to register page
         getStarted.setOnClickListener {
-            val intent = Intent(this, DashboardActivity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 

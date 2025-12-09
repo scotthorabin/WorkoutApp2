@@ -22,7 +22,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout7"
-        android:layout_width="375dp"
+        android:layout_width="370dp"
         android:layout_height="66dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="13dp"
@@ -45,7 +45,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout32"
-        android:layout_width="375dp"
+        android:layout_width="370dp"
         android:layout_height="66dp"
         android:layout_marginStart="13dp"
         android:layout_marginEnd="12dp"
@@ -82,14 +82,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/confirmpButton"
-        android:layout_width="375dp"
+        android:layout_width="370dp"
         android:layout_height="66dp"
         android:layout_marginStart="13dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/roundedtext"
         app:layout_constraintBottom_toTopOf="@+id/btn_register"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -114,7 +115,10 @@
         android:textColor="#908A8A8A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
@@ -133,17 +137,30 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/account" />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/btnGoogle"
+    <TextView
+        android:id="@+id/Ortxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Or"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account"
+        app:layout_constraintVertical_bias="0.16" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnGoogle"
+        android:layout_width="198dp"
+        android:layout_height="65dp"
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.838"
+        app:layout_constraintVertical_bias="0.894"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

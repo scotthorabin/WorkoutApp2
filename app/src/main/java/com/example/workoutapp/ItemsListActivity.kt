@@ -37,6 +37,7 @@ class ItemsListActivity : AppCompatActivity() {
         initList()
     }
 
+    // Progress bar whilst items appear, navigation for user (Back button)
     private fun initList() {
         binding.apply {
             progressBar.visibility = View.VISIBLE
@@ -56,6 +57,7 @@ class ItemsListActivity : AppCompatActivity() {
         }
     }
 
+    // Gets items information
     private fun getBundles() {
        id = intent.getStringExtra("id")!!
         title = intent.getStringExtra("title")!!

@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 class MainViewModel: ViewModel() {
     private val repository= MainRepository()
 
+    // Mutable least for categories, MutableList so we can change things
     fun loadCategory(): LiveData<MutableList<CategoryModel>>{
         return repository.loadCategory()
     }

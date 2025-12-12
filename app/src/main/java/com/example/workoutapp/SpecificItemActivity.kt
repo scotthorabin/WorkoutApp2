@@ -16,14 +16,14 @@ class SpecificItemActivity : AppCompatActivity() {
     private lateinit var item: ItemsModel
 
 
-
+    // Specific item appears based on user input
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivitySpecificItemBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        bundle()
+      loadItems()
 
 
         val startButton = findViewById<Button>(R.id.startBtn)
@@ -34,7 +34,8 @@ class SpecificItemActivity : AppCompatActivity() {
         }
         }
 
-    private fun bundle(){
+    // Loads Item information
+    private fun loadItems(){
         binding.apply{
             item=intent.getSerializableExtra("object") as ItemsModel
 

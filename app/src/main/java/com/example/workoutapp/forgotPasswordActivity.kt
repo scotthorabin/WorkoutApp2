@@ -17,9 +17,11 @@ class forgotPasswordActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_forgot_password)
 
+        // Variables for user to fill out email form and submit request
         val submit = findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.btn_Submit)
         val email = findViewById<TextInputEditText>(R.id.email)
 
+        // IF statements for both field being activated/not activated
         submit.setOnClickListener {
             val email: String = email.text.toString().trim{ it <= ' '}
             if (email.isEmpty()){

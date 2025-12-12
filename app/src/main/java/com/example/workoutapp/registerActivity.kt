@@ -18,6 +18,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 class RegisterActivity : AppCompatActivity() {
 
+    // variables named for google sign in and connection to Firebase
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -32,6 +33,7 @@ class RegisterActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         // This is the google sign in option config
+        // From Google Documentation
 
         val signIn = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -44,6 +46,8 @@ class RegisterActivity : AppCompatActivity() {
             signInWithGoogle()
         }
 
+        //When register button is clicked, checks all fields have been completed
+
         binding.btnRegister.setOnClickListener {
             val email = binding.email.text.toString()
             val password = binding.password.text.toString()
@@ -52,6 +56,8 @@ class RegisterActivity : AppCompatActivity() {
 
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                 if (password == confirmPassword) {
+
+                    // If not empty then proceed to Dashboard
 
                     firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener {
@@ -64,6 +70,7 @@ class RegisterActivity : AppCompatActivity() {
                             }
                         }
                 } else {
+                    // Else, exceptions appear
                     Toast.makeText(
                         this,
                         "Password does not match, please try again!",
@@ -75,12 +82,14 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
+        // If login button is clicked then takes to login activity
         binding.btnLogin.setOnClickListener {
             val intent = Intent(this, loginActivity::class.java)
             startActivity(intent)
         }
     }
 
+    // Google sign in attempt
     private val googleSignInLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
@@ -103,9 +112,8 @@ class RegisterActivity : AppCompatActivity() {
         googleSignInLauncher.launch(signInIntent)
     }
 
-    private fun newUser() {
-    }
 
+    // When user logs in with google, either a welcome back or welcome message appears, if not, exception
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credentials = GoogleAuthProvider.getCredential(idToken, null)
         firebaseAuth.signInWithCredential(credentials)

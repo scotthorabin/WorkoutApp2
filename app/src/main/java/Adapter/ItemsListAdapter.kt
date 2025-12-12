@@ -36,6 +36,7 @@ RecyclerView.Adapter<ItemsListAdapter.Viewholder>(){
             .load(items[position].url)
             .into(holder.binding.picture)
 
+        // When user clicks on specific exercise, takes them to activity
         holder.itemView.setOnClickListener {
             val intent = Intent(context, SpecificItemActivity::class.java)
             intent.putExtra("object", items[position])

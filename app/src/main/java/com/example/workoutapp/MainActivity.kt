@@ -8,8 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -27,20 +26,30 @@ class MainActivity : AppCompatActivity() {
 
 
         //Initialising TextViews on Main
-        val image = findViewById<ImageView>(R.id.mainImage)
+        val image = findViewById<ImageView>(R.id.Background)
+        val login = findViewById<Button>(R.id.Login)
         val text = findViewById<TextView>(R.id.slogan)
+        val logo = findViewById<ImageView>(R.id.Logo)
         val getStarted = findViewById<Button>(R.id.getStarted)
 
 
 
         // Adding animations to items
-        image.startAnimation(movingItems)
         text.startAnimation(movingItems)
+        logo.startAnimation(movingItems)
+        image.startAnimation(movingItems)
+        login.startAnimation(movingItems)
         getStarted.startAnimation(movingItems)
 
         // When get started button is clicked, navigate to register page
         getStarted.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        // When get login button is clicked, navigate to register page
+        login.setOnClickListener {
+            val intent = Intent(this, loginActivity::class.java)
             startActivity(intent)
         }
 

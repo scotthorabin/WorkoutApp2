@@ -74,6 +74,7 @@
         android:layout_marginBottom="280dp"
         android:background="@drawable/roundedtextbtn"
         android:text="@string/Register"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.366"
